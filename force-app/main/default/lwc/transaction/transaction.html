@@ -1,0 +1,72 @@
+<template>
+    <lightning-card title="Historique Transaction">
+        <div class="slds-size_2-of-2">
+            <!-- * Input Username -->
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item flexibility="grow">
+                <lightning-input type="search" value={datedeb} onchange={updatedatedeb} label="Saisir Date Debut (AAAA-MM-JJ)"></lightning-input>
+                <lightning-input type="search" value={datefin} onchange={updatedatefin} label="Saisir Date fin (AAAA-MM-JJ)"></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-var-p-left_small">
+                    <lightning-button label="Search" variant="brand" onclick={getGithubStats}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <br />
+            <!-- * Display User Details -->
+            <!-- <div if:true={transactionPopulated}>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>ID:</b> {transaction.sfid}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Montant:</b> {transaction.amount} DT</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Description:</b> {transaction.description}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Status:</b> {transaction.status}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>NumAccount Source:</b> {transaction.fromAccount}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>NumAccount Destinataire:</b> {transaction.toAccount}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Date:</b> {transaction.date}</div>
+            </div> -->
+            <div if:true={transactionPopulated}>
+                <div class="slds-box slds-theme_default">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                        <thead>
+                            <tr>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Account Name">Monant</div>
+                                  </th>
+                                  <th class="" scope="col">
+                                    <div class="slds-truncate" title="Account Industry">NumCompteDestination</div>
+                                  </th>
+                                  <th class="" scope="col">
+                                      <div class="slds-truncate" title="Account Type">Date</div>
+                                    </th>
+                                    
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="Site">ID Transaction</div>
+                                      </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={transactions} for:item="tran" >
+                                <tr key={tran.Id}>
+                                    <td>{tran.amount} DT </td>
+                                    <td>{tran.toAccount}</td>
+                                    <td>{tran.date}</td>
+                                    <td>{tran.sfid}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>   
+
+                <!-- <div
+                for:each={transactions} for:item="tran" key={tran.Id} >
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>ID:</b> {tran.sfid}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Montant:</b> {tran.amount} DT</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Description:</b> {tran.description}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Status:</b> {tran.status}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>NumAccount Source:</b> {tran.fromAccount}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>NumAccount Destinataire:</b> {tran.toAccount}</div>
+                <div class="slds-var-p-vertical_xxx-small slds-text-heading_small"><b>Date:</b> {tran.date}</div>
+                </div> -->
+            </div>
+        </div>
+    </lightning-card>    
+
+</template>

@@ -1,0 +1,196 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<input type=hidden name="oid" value="00D8d000002bqr7">
+<input type=hidden name="retURL" value="https://korba-developer-edition.um8.force.com/Bank/s/thank-you">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="malek.yedes1@esprit.tn">                                         -->
+<!--  ----------------------------------------------------------------------  -->
+
+<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+
+<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="city">City</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
+
+<label for="salutation">Salutation</label><select  id="salutation" name="salutation"><option value="">--None--</option><option value="Mr.">Mr.</option>
+<option value="Ms.">Ms.</option>
+<option value="Mrs.">Mrs.</option>
+<option value="Dr.">Dr.</option>
+<option value="Prof.">Prof.</option>
+</select><br>
+
+<label for="mobile">Mobile</label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text" /><br>
+
+<label for="country">Country</label><input  id="country" maxlength="40" name="country" size="20" type="text" /><br>
+
+situation:<select  id="00N8d000006itOJ" name="00N8d000006itOJ" title="situation"><option value="">--None--</option><option value="Célibataire">Célibataire</option>
+<option value="Marie">Marie</option>
+<option value="Divorce">Divorce</option>
+<option value="Veuf">Veuf</option>
+</select><br>
+
+profession:<select  id="00N8d000006itSb" name="00N8d000006itSb" title="profession"><option value="">--None--</option><option value="Salarié">Salarié</option>
+<option value="Fonction libérale">Fonction libérale</option>
+<option value="Retraité">Retraité</option>
+<option value="Rentier">Rentier</option>
+</select><br>
+
+prime:<input  id="00N8d000006itSg" name="00N8d000006itSg" size="20" type="text" /><br>
+
+montant:<input  id="00N8d000006itSl" name="00N8d000006itSl" size="20" type="text" /><br>
+
+Revenu:<input  id="00N8d000006itOO" name="00N8d000006itOO" size="20" type="text" /><br>
+
+loan_type:<select  id="00N8d000006itSq" name="00N8d000006itSq" title="loan_type"><option value="">--None--</option><option value="Consommation">Consommation</option>
+<option value="Aménagement logement">Aménagement logement</option>
+<option value="Voiture">Voiture</option>
+<option value="Immobilier">Immobilier</option>
+</select><br>
+
+duree:<input  id="00N8d000006itSv" name="00N8d000006itSv" size="20" type="text" /><br>
+
+CIN:<input  id="00N8d000006itT0" name="00N8d000006itT0" size="20" type="text" /><br>
+
+AccountType:<select  id="00N8d000006jBq8" name="00N8d000006jBq8" title="AccountType"><option value="">--None--</option><option value="Person">Person</option>
+<option value="Business">Business</option>
+</select><br>
+
+Entreprise:<input  id="00N8d00000An3gb" maxlength="20" name="00N8d00000An3gb" size="20" type="text" /><br>
+
+Age:<input  id="00N8d00000AnA2K" name="00N8d00000AnA2K" size="20" type="text" /><br>
+
+<label for="state">State/Province</label><input  id="state" maxlength="20" name="state" size="20" type="text" /><br>
+
+<input type="submit" name="submit">
+
+</form>
+
+import { LightningElement, api, track } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+
+
+export default class ExploreFormWizard extends LightningElement {
+        currentStep="1";
+        handleSuccess( event ) {
+        const toastEvent = new ShowToastEvent({
+            title: 'Case Updated',
+            message: 'Case Updated Successfully!!!',
+            variant: 'success' 
+        });
+        this.dispatchEvent( toastEvent );
+        }
+   
+    handleChange(event) {
+        this.value = event.detail.value;
+    }
+    showcons(event){
+        this.template.querySelector('div.consomation').classList.remove('slds-hide');
+        this.template.querySelector('div.logement').classList.add('slds-hide');
+        this.template.querySelector('div.voiture').classList.add('slds-hide');
+        this.template.querySelector('button.btncons').classList.add('highlight');
+        this.template.querySelector('button.btnvoiture').classList.remove('highlight');
+        this.template.querySelector('button.btnlog').classList.remove('highlight');
+        this.template.querySelector('div.bydefault').classList.add('slds-hide');
+        this.template.querySelector('select.loantype').value="Consommation";
+       
+    }
+    showvoiture(event){
+        this.template.querySelector('div.voiture').classList.remove('slds-hide');
+        this.template.querySelector('div.consomation').classList.add('slds-hide');
+        this.template.querySelector('div.logement').classList.add('slds-hide');
+        this.template.querySelector('button.btnvoiture').classList.add('highlight');
+        this.template.querySelector('button.btncons').classList.remove('highlight');
+        this.template.querySelector('button.btnlog').classList.remove('highlight');        
+        this.template.querySelector('div.bydefault').classList.add('slds-hide');
+        this.template.querySelector('select.loantype').value="Voiture";
+    }
+
+    showlog(event){
+        this.template.querySelector('div.consomation').classList.add('slds-hide');
+        this.template.querySelector('div.logement').classList.remove('slds-hide');
+        this.template.querySelector('div.voiture').classList.add('slds-hide');
+        this.template.querySelector('button.btnlog').classList.add('highlight');
+        this.template.querySelector('button.btnvoiture').classList.remove('highlight');  
+        this.template.querySelector('button.btncons').classList.remove('highlight');
+        this.template.querySelector('div.bydefault').classList.add('slds-hide');
+        this.template.querySelector('select.loantype').value="Immobilier";
+    }
+
+    goBackToStepOne() {
+        this.currentStep = '1';
+        this.template.querySelector('div.stepTwo').classList.add('slds-hide');
+        this.template
+            .querySelector('div.stepOne')
+            .classList.remove('slds-hide');
+    }
+ 
+
+    goToStepTwo() {
+        if(!this.template.querySelector('[name="first_name"]').value||!this.template.querySelector('[name="last_name"]').value
+        ||!this.template.querySelector('[name="00N8d000008nhi5"]').value||!this.template.querySelector('[name="00N8d000008nhpu"]').value
+        ||!this.template.querySelector('[name="email"]').value||!this.template.querySelector('[name="email"]').value
+        ||!this.template.querySelector('[name="mobile"]').value||!this.template.querySelector('[name="city"]').value
+        ||!this.template.querySelector('[name="enfant"]').value||!this.template.querySelector('[name="state"]').value
+        ) {      
+           alert("SVP tous les champs ne doivent pas etre vide");
+        }
+        else{
+            this.currentStep = '2';
+            this.template.querySelector('div.stepOne').classList.add('slds-hide');
+             this.template
+            .querySelector('div.stepTwo')
+            .classList.remove('slds-hide');
+        }
+       
+        this.template.querySelector('[name="00N8d000008no01"]').value;
+        this.template.querySelector('[name="00N8d000008nooM"]').value;
+        this.template.querySelector('[name="00N8d000008nooR"]').value;      
+    }
+    goBackToStepTwo() {
+        this.currentStep = '2';
+
+        this.template.querySelector('div.stepThree').classList.add('slds-hide');
+        this.template
+            .querySelector('div.stepTwo')
+            .classList.remove('slds-hide');
+       
+    }
+    goToStepThree() {      
+        if (!this.template.querySelector('[name="00N8d000008nhpB"]').value || !this.template.querySelector('[name="company"]').value ||
+            !this.template.querySelector('[name="revenue"]').value || !
+            this.template.querySelector('[name="00N8d000008nntE"]').value || !
+            this.template.querySelector('[name="00N8d000008nnts"]').value)
+            {
+                alert("SVP tous les champs ne doivent pas etre vide");
+            }
+
+        else{
+                this.currentStep = '3';
+                this.template.querySelector('div.stepTwo').classList.add('slds-hide');
+                this.template
+                    .querySelector('div.stepThree')
+                    .classList.remove('slds-hide');
+            }
+    }
+       
+ 
+}

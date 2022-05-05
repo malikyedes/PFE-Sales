@@ -1,0 +1,22 @@
+section.serv {
+
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding:20px ;
+    
+  }
+  section.serv .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 80px;
+  }
+  section.serv .container div {
+    text-align: center;
+  }
+  section.serv .container div img {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  section.serv .container div p {
+    color: #777;
+  }

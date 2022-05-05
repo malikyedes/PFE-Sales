@@ -1,0 +1,101 @@
+
+@font-face {
+  /*
+      font family is used to give a name to the custom font,
+       you use this for referencing the custom font later
+  */
+  font-family: "OpenSans";
+
+  /*
+      This is the location of the Custom Font, note, I have stored in a ZIP file
+   */
+  src: url('/resource/opensans') format('TrueType');
+}
+
+
+
+.container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 40px;
+  padding-left : 40px;
+}
+.left-side{
+  background-color: #f6f6f6;
+  padding-left: 80px;
+  padding-right: 80px;
+  color: rgb(23, 23, 23);
+  flex:1;
+}
+
+.text-container{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-right : 40%;
+}
+h1{
+  flex:1;
+  font-size: 49px;
+  font-family: 'Kaushan Script', cursive;
+
+}
+
+
+p{
+  font-family: 'Source Sans Pro', sans-serif ;
+margin-top: 10px;
+  margin-bottom: 5%;
+  font-size: medium;
+  margin-top: none;
+  flex : 2
+}
+
+/* CSS */
+button {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+button:active,
+button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+button {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+.image-container{
+  flex: 1;
+}
+
+.image-container img{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width : 40vw;
+
+}

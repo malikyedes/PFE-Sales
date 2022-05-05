@@ -1,0 +1,86 @@
+<aura:component implements="force:appHostable,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require styles="/resource/SLDS"/>
+     
+    <div class="slds">
+        <div class="slds-page-header">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-heading--label">Calculatrice</p>
+                            <div class="slds-grid">
+                                <h1 class="slds-text-heading--medium slds-m-right--small slds-truncate slds-align-middle">Calculer votre mensualités </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /slds-col-->                        
+            </div>   
+            <!-- /slds-grid-->                 
+        </div>
+        <!-- /slds-page-header-->
+        <div class="container">
+            <div class="slds-grid slds-m-top--medium slds-wrap">
+                <div class="slds-col--padded slds-size--1-of-1">
+                    <div id="err" style="display:none;" class="slds-notify slds-notify--alert slds-theme--error slds-theme--alert-texture" role="alert">
+                        <h2>S'il vous plait replir tous le champs</h2>
+                    </div>
+                     
+                    <div class="slds-form--stacked">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" >Montant crédit</label>
+                            <div class="slds-form-element__control">
+                                <input id="loanAmt" class="slds-input" type="text"  required="" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" >Durée du crédit (MOIS)</label>
+                            <div class="slds-form-element__control">
+                                <input id="months" class="slds-input" type="text" required="" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" >Interet</label>
+                            <div class="slds-form-element__control">
+                                <input id="rate" class="slds-input" type="text" required="" />
+                            </div>
+                        </div>
+                        <div class="slds-form-element slds-m-bottom--medium ">
+                            <ui:button label="Submit" press="{!c.getEMIDetail}"/> &nbsp;
+                            <ui:button label="Reset" press="{!c.reset}"/>   &nbsp;
+                            <ui:button label="Détail mensuel" press="{!c.getEMIMonthly}"/><br/>                            
+                        </div>                        
+                    </div>
+                </div>
+                 
+                <div class="slds-col--padded slds-size--1-of-1 " >
+                    <div id="emiDiv" style="display:none;">
+                        <div class="slds-form-element">
+                            <span class="slds-form-element__label">mensualités</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static"><div id="EMI"></div></span>
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <span class="slds-form-element__label">Interet Payable</span>
+                            <div class="slds-form-element__control">
+                                <span  class="slds-form-element__static"><div id="interestP"></div></span>
+                            </div>
+                        </div>
+                        <div class="slds-form-element">
+                            <span class="slds-form-element__label">Total Payable</span>
+                            <div class="slds-form-element__control">
+                                <span  class="slds-form-element__static"><div id="totalP" ></div></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="addchart" class="slds-scrollable--y" style="display:none; max-height: 280px;"></div>
+                </div>                
+            </div>
+             
+                         
+        </div>        
+    </div>    
+</aura:component>

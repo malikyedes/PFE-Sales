@@ -1,0 +1,52 @@
+<template>
+    <lightning-card class="slds-text-align_center" style="margin-left: 2cm">
+      <h3 slot="title">
+        <lightning-icon
+          icon-name="utility:connected_apps"
+          size="small"
+        ></lightning-icon>
+        <b>Securely Upload Documents</b>
+      </h3>
+  
+  
+      <lightning-layout
+        class="slds-m-around_medium lgc-bg"
+        style="width: 75%"
+        multiple-rows="true"
+        size="12"
+      >
+        <lightning-layout-item size="4">
+          <div class="slds-box slds-m-around_medium lgc-white ">
+            <p class="slds-text-align_left font-default">Account Number:</p>
+          </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="4">
+          <div class="slds-box slds-m-around_medium lgc-white slds-text-align_left">
+            <h2 class="font-default" style="color: red;">Required Documents</h2>
+            <ul class="slds-list_dotted" style="font-size: 14px;">
+              <li>Bank Statement
+              </li>
+          </ul>
+          </div>
+        </lightning-layout-item>
+        <lightning-layout-item size="4">
+          <div class="slds-box slds-m-around_medium lgc-white ">
+          <p >
+            <lightning-file-upload
+            label=""
+            name="fileUploader"
+            accept={acceptedFormats}
+            file-field-name="Guest_Record_fileupload__c"
+            file-field-value="0016C00000aUrzgQAC"
+            onuploadfinished={handleUploadFinished}
+            multiple
+          >
+          </lightning-file-upload>
+          </p>
+        </div>
+          
+        </lightning-layout-item>
+      </lightning-layout>
+    </lightning-card>
+  </template>
+  

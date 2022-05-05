@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    width: 100%;
+    height: auto ;
+     
+}
+
+footer .main-content {
+    padding-bottom: 10px;
+    display: flex;
+}
+
+
+footer .main-content div {
+    margin-right: 0px;
+}  
+
+footer .main-content div .footerHeader {
+    margin-bottom: 10px;
+    border-bottom: 2px solid grey;
+    padding-bottom: 3px;
+}
+
+footer .main-content div.address {
+    float: left;
+    margin-left: 300px;
+}
+
+footer .main-content .social ul {
+    list-style: none;
+}
+
+footer .center-section address h2 {
+margin-top: 30px;
+
+
+
+}
+
+footer .main-content .left-section {
+    margin-left: 20px;
+}
+
+footer .main-content .left-section about {
+margin-top: 10px;
+}
+
+
+footer .main-content .social ul li {
+    display: inline-block;
+}
+footer .main-content .social ul li a {
+    font-size: 25px;
+    color: #ecf0f1;
+    margin-right: 5px;
+    background-color: #2e4257;
+    padding: 0 10px;
+    transition: .3s;
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    text-decoration: none;
+    color: #95a5a6;
+}
+
+footer .main-content .right-section ul li a {
+    color: #7f8c8d;
+}
+
+footer .main-content .right-section .social ul li a {
+    color: #ecf0f1;
+}
+
+footer .main-content .right-section {
+    margin-left: 200px;
+    display: flex;
+}
+
+footer .main-content .right-section .second-list {
+    margin-left: 200px;
+} 
+
+footer .main-content .right-section .first-list ul li a:hover {
+    color: #ecf0f1;
+    padding-left: 10px;
+    font-size: 16.5px;
+}
+
+footer .main-content .right-section .first-list ul li a {
+    transition: .3s;
+}
+
+footer .main-content .social a.facebook:hover {
+    background-color: #0674e7;
+}
+
+footer .main-content .social a.instagram:hover {
+    background-color: rgb(255, 0, 255);
+}
+
+footer .main-content .social a.telegram:hover {
+    background-color: #32afed;
+}
+footer .main-content .social a.github:hover {
+    background-color: #BD2C00;
+}
+footer .copyright p {
+    text-align: center;
+    padding:10px 0;
+    background-color: #34495e;
+}

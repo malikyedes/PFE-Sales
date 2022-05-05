@@ -1,0 +1,214 @@
+@font-face {
+  /*
+      font family is used to give a name to the custom font,
+       you use this for referencing the custom font later
+  */
+  font-family: "OpenSans";
+
+  /*
+      This is the location of the Custom Font, note, I have stored in a ZIP file
+   */
+  src: url('/resource/opensans') format('TrueType');
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+/*
+:root {
+  --Grey: #f6f6f6;
+  --Cyan: #03a9f4;
+  --Red: #b00020;
+  --Blue: #227093;
+  --Green: #218c74;
+  --DarkGrey: #333333;
+  --fb: #3b5998;
+  --twitter: #5da9dd;
+  --insta: #800080;
+  --github: #1b1f23;
+  --linkedin: #0077b5;
+  --mainPadding: 20px;
+  --mainDuration: 0.5s;
+}*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "OpenSans", sans-serif;
+}
+::selection {
+  color: #fff;
+  background: #000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #03a9f4;
+}
+.center-f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  margin-inline: auto;
+  padding-inline: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 738px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 962px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+section.services {
+  padding: 20px ;
+  background-color: white;
+}
+section.services .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+section.services .container h1 span {
+  color: var(--Cyan);
+}
+section.services .container p {
+  text-align: center;
+  line-height: 1.8;
+  padding:  20px ;
+}
+section.serv {
+  padding:  20px ;
+}
+section.serv .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 60px;
+}
+section.serv .container div {
+  text-align: center;
+}
+section.serv .container div img {
+  width: 80px;
+}
+section.serv .container div p {
+  color: #777;
+}
+.mycard{
+   padding: 2rem;
+ /* width: 400px;*/
+  margin-right : 15px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  
+  border-left: 0 solid #00a2ff;
+  transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+.mycard:hover{
+   padding-left: 0.5rem;
+  border-left: 0.5rem solid #00a2ff;
+}
+section.about {
+  padding:  20px ;
+  background-color: #f6f6f6 ;
+}
+section.about .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  section.about .container {
+    flex-direction: column;
+  }
+  section.about .container div {
+    width: unset !important;
+  }
+}
+section.about .container img {
+  width: 300px;
+  height: 100px;
+}
+section.about .container div {
+  display: inline-block;
+  margin-left: 30px;
+  padding:  20px ;
+  width: calc(100% - 355px);
+}
+section.about .container div h2 {
+  margin-top: 30px;
+  font-family: 'Source Sans Pro', sans-serif ;
+  font-size: large ;
+
+}
+
+
+section.about .container div p {
+  margin-top: 30px;
+  line-height: 1.8;
+  font-family: 'Source Sans Pro', sans-serif ;
+  font-size: medium;
+
+}
+section.nums {
+  padding:  20px ;
+}
+section.nums .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+section.nums .container div {
+  margin-block: 15px;
+  padding:  20px ;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+section.nums .container div:first-child {
+  background-color: #b00020 ;
+}
+section.nums .container div:nth-child(2) {
+  background-color: #227093;
+}
+section.nums .container div:last-child {
+  background-color: #218c74;
+}
+section.nums .container div p {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+section.contact {
+  padding:  20px ;
+}
+section.contact .container h1 {
+  text-align: center;
+}
+section.contact .container div.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
