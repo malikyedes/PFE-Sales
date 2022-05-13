@@ -18,6 +18,26 @@ export default class Box extends NavigationMixin(LightningElement) {
             }
         });
     }
+    navigateconso(event) {
+        alert(event.target.label) ; 
+        this[NavigationMixin.Navigate]({
+            type: 'standard__namedPage',
+            attributes: {
+                pageName:"creditconso",
+            }
+        });
+    }
+
+    navigateimmob(event) {
+        alert(event.target.label) ; 
+        this[NavigationMixin.Navigate]({
+            type: 'standard__namedPage',
+            attributes: {
+                pageName:"créditimmob",
+            }
+        });
+    }
+
 
 
 

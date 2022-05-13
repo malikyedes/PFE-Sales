@@ -19,4 +19,28 @@ export default class Buttons extends NavigationMixin (LightningElement) {
     }
 
 
+    navigatetransaction() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__namedPage',
+            attributes: {
+                pageName:"transaction",
+            }
+        });
+
+
+    }
+
+    navigatefile() {
+        this[NavigationMixin.Navigate]({
+            type: 'standard__objectPage',
+            attributes: {
+                objectApiName: 'ContentDocument',
+                actionName: 'list',
+            }
+        });
+
+
+    }
+
+
 }

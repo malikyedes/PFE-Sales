@@ -1,5 +1,20 @@
+
 <template>
+    <div class="spinner">
+        <template if:true={isLoading}>
+             <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+             </lightning-spinner>
+        </template>
+    </div>
+
     <lightning-card title="Historique Transaction">
+        <lightning-layout-item class="slds-var-p-left_small">
+            <lightning-button label="previous month" variant="brand" onclick={getTransactionprevmonth}></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item class="slds-var-p-left_small">
+            <lightning-button label="this month" variant="brand" onclick={getTransactionthismonth}></lightning-button>
+        </lightning-layout-item>
+
         <div class="slds-size_2-of-2">
             <!-- * Input Username -->
             <lightning-layout vertical-align="end">
@@ -8,8 +23,9 @@
                 <lightning-input type="search" value={datefin} onchange={updatedatefin} label="Saisir Date fin (AAAA-MM-JJ)"></lightning-input>
                 </lightning-layout-item>
                 <lightning-layout-item class="slds-var-p-left_small">
-                    <lightning-button label="Search" variant="brand" onclick={getGithubStats}></lightning-button>
+                    <lightning-button label="Search" variant="brand" onclick={getTransaction}></lightning-button>
                 </lightning-layout-item>
+
             </lightning-layout>
             <br />
             <!-- * Display User Details -->
@@ -28,17 +44,17 @@
                         <thead>
                             <tr>
                                 <th class="" scope="col">
-                                    <div class="slds-truncate" title="Account Name">Monant</div>
+                                    <div class="slds-truncate" title="Monant">Monant</div>
                                   </th>
                                   <th class="" scope="col">
-                                    <div class="slds-truncate" title="Account Industry">NumCompteDestination</div>
+                                    <div class="slds-truncate" title="RIB">RIB Destination</div>
                                   </th>
                                   <th class="" scope="col">
-                                      <div class="slds-truncate" title="Account Type">Date</div>
+                                      <div class="slds-truncate" title="Date">Date</div>
                                     </th>
                                     
                                     <th class="" scope="col">
-                                        <div class="slds-truncate" title="Site">ID Transaction</div>
+                                        <div class="slds-truncate" title="ID">ID Transaction</div>
                                       </th>
                             </tr>
                         </thead>

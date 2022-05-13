@@ -1,16 +1,16 @@
 ({
    
-openModal:function(component, event, helper) {
-    var changeType = event.getParams().changeType;
-    
-    if (changeType === "CHANGED" && (('StageName' in event.getParams().changedFields))) {
-        var newStageName = event.getParams().changedFields.StageName.value;
-        var oldStageName = event.getParams().changedFields.StageName.oldValue;
-        if(newStageName == 'Negotiation/Review' && oldStageName == 'Décision'){
-            component.set('v.openModal',true);
+    openModal:function(component, event, helper) {
+        var changeType = event.getParams().changeType;
+        
+        if (changeType === "CHANGED" && (('StageName' in event.getParams().changedFields))) {
+            var newStageName = event.getParams().changedFields.StageName.value;
+            var oldStageName = event.getParams().changedFields.StageName.oldValue;
+            if(newStageName == 'Negotiation/Review' && oldStageName == 'Décision'){
+                component.set('v.openModal',true);
+            }
         }
     }
-}
 ,             
  handleOk:function(component, event, helper) {
       
