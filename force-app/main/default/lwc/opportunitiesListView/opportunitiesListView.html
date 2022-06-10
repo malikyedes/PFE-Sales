@@ -1,0 +1,57 @@
+<template >
+    <div class="slds-card">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-opportunity">
+                                 <lightning-icon icon-name="standard:opportunity"></lightning-icon>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span>Opportunities List View</span>
+                                        <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Opportunities</span><br>
+                                        <span>Selected Opportunities: {selectedOpportunitiesLen}</span>
+                                    </h1>
+                                </div>     
+                            </div>
+                        </div>
+                        <div class="slds-no-flex">
+                            <lightning-button-icon onclick={refresh}  icon-name="utility:refresh"  alternative-text="Refresh" title="Refresh"></lightning-button-icon>
+                            <lightning-button-icon style="margin:2px;" icon-name="utility:chart" onclick={navigateToDashboardPagePage}></lightning-button-icon>
+                            <lightning-button  style="margin:2px;" label="Create Opportunity" onclick={navigateToNewRecordPage}></lightning-button>
+                            <lightning-button  style="margin:2px;" label="Delete Selected Opportunitiess" onclick={deleteSelectedOpportunities}></lightning-button>
+                            <lightning-button  style="margin:2px;" onclick={navigateToVisualForcePage} label ="Generate PDF"></lightning-button>
+                            <lightning-input style="margin-left:305px ;" class=" slds-size_small " type="search" onchange={handleSearch} placeholder="Search opportunity"></lightning-input>
+                            
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+                
+             
+        </div>
+        
+    </div>
+    
+        
+        <div class="slds-card__body_inner" >
+            
+
+            <lightning-datatable
+            key-field="id"
+            data={opportunities}
+            columns={cols}
+            onrowselection={handleRowSelection}
+            onrowaction={handleRowAction}
+            > 
+            </lightning-datatable>
+        </div>
+
+    
+</template>

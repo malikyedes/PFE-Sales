@@ -1,0 +1,161 @@
+<template>
+    <div class="album" for:each={Allnego.data} for:item="rpb" key={rpb.Id}>
+
+    <section class="serv">
+      <div class="container1">
+
+      <div class="mycard1">
+         <h4>
+
+            Vous avez fait  {rpb.Tentative__c} Propositions 
+         </h4>       
+      </div>
+       </div>
+
+       
+          <div class="container">
+          <div class="mycard">
+            <h4>Durée proposé</h4>
+            <p>
+                {rpb.Dur_e__c}
+            </p>
+          </div>
+          <div class="mycard">
+            <h4>Taux </h4>
+            <p>
+                {rpb.Taux_propos__c} %
+
+            </p>
+          </div>
+          </div>
+
+          <div class="containerbutton">
+            <button class="button1" onclick={modalaccept}> Accepter </button>
+
+            <div if:true={Buttontrue}>
+            <button class="button1" onclick={handlemodal} > Négocier  </button>
+         </div>
+        </div>
+        
+      </section>
+<template if:true={modal}>
+        <section role="dialog" tabindex="-1"
+                 aria-labelledby="modal-heading-01"
+                 aria-modal="true"
+                 aria-describedby="modal-content-id-1"
+                class="slds-modal slds-fade-in-open">
+           <div class="slds-modal__container">
+              <!-- modal header start -->
+              <header class="slds-modal__header">
+                 <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small" ></lightning-icon>
+                 </button>
+                 <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Etes vous sure d'accepter la proposition </h2>
+              </header>
+              <!-- modal body start -->
+              <div class="slds-modal__content slds-var-p-around_medium" id="modal-content-id-1">
+                <dl class="slds-list_horizontal slds-wrap">
+                    <lightning-record-edit-form layout-type="Full" record-id={rpb.Id} object-api-name="N_gociation__c" onsubmit={handleSubmit} onsuccess={handleSuccess}>
+                        <lightning-messages></lightning-messages>
+
+                        <label for="Proposition_accept__c">Accepeter ?</label>
+                        <lightning-input-field field-name="Proposition_accept__c"  variant="label-hidden"></lightning-input-field>          
+                      
+                        <div style="text-align:center;">
+                            <lightning-button class="slds-m-top_small"
+                                              variant="brand"
+                                              type="submit"
+                                              name="update"
+                                              label="Valider"></lightning-button>
+                        </div>
+                    </lightning-record-edit-form><br/>
+                    
+                </dl>
+              </div>
+              <!-- modal footer start-->
+              <footer class="slds-modal__footer">
+                   <lightning-button variant="brand"
+                   label="Close"
+                   title="Close"
+                   onclick={closeModal}
+                   ></lightning-button>
+              </footer>
+           </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+     </template>
+
+
+     <template if:true={bShowModal}>
+      <section role="dialog" tabindex="-1"
+               aria-labelledby="modal-heading-01"
+               aria-modal="true"
+               aria-describedby="modal-content-id-1"
+              class="slds-modal slds-fade-in-open">
+         <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+               <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                  <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small" ></lightning-icon>
+               </button>
+               <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Négocier</h2>
+            </header>
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+
+              <dl class="slds-list_horizontal slds-wrap">
+
+                  <lightning-record-edit-form layout-type="Full" record-id={rpb.Id} object-api-name="N_gociation__c" onsubmit={handleSubmit} onsuccess={handleSuccess}>
+                      <lightning-messages></lightning-messages>
+                      <label for="taux_client__c">Taux préferé</label>
+                      <lightning-input-field  field-name="taux_client__c" variant="label-hidden" style="height:100px;width:100px"></lightning-input-field> 
+                      <label for="duree_client__c">Durée préferé</label>
+                      <lightning-input-field field-name="duree_client__c"  variant="label-hidden"></lightning-input-field>  
+                      <label for="duree_client__c">Avis </label>
+                      <lightning-input-field field-name="Avis_client__c"  variant="label-hidden"></lightning-input-field>                                
+                      <div style="text-align:center;">
+                         
+                      </div>
+                      <lightning-button class="slds-m-top_small"
+              variant="brand"
+              type="submit"
+              name="update"
+              label="Valider">
+            </lightning-button>
+                  </lightning-record-edit-form><br/>
+                  
+              </dl>
+            </div>
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+              
+                 
+              <lightning-button variant="brand"
+                 label="Fermer"
+                 title="Close"
+                 onclick={closeModal}
+                 ></lightning-button>
+            </footer>
+         </div>
+      </section>
+      <div class="slds-backdrop slds-backdrop_open"></div>
+   </template>
+
+        
+
+
+
+
+
+
+
+
+        
+
+    </div>
+
+    
+
+
+
+</template>

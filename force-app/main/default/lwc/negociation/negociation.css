@@ -1,0 +1,227 @@
+section.serv {
+    padding-right:  200px ;
+    padding-left: 200px;
+    padding-top: 50px;
+    padding-bottom: 200px;
+    justify-content: center;
+
+  }
+  section.serv .container {
+    display: grid;
+    position: center ;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 60px;
+  }
+
+  section.serv .container1
+   {
+    padding-left: 100px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    position: center ;
+    place-items:  center;
+    justify-content: center;
+
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 60px;
+  }
+
+  section.serv .mycard1{
+    grid-column-start: 1;
+    grid-column-end: five;
+    grid-row-start: row1-start;
+    grid-row-end: 3;
+
+    margin-bottom: 50px;
+
+    position: center ;
+    padding: 2rem;
+  /* width: 400px;*/
+   margin-right : 50px;
+   box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+     0 5px 15px 0 rgba(0,0,0,0.08);
+   background-color: #ffffff;
+   border-radius: 0.5rem;
+   
+   border-left: 0 solid #00a2ff;
+   transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+ }
+ .mycard1:hover{
+    padding-left: 0.5rem;
+   border-left: 0.5rem solid #00a2ff;
+ }
+
+  section.serv .container div {
+    text-align: center;
+  }
+
+  section.serv .container1 div {
+    text-align: center;
+  }
+
+
+  section.serv .container div h4 {
+    font-size: 40px;
+    color: rgb(8, 0, 0);
+  }
+  section.serv .container1 div h4 {
+    font-size: 40px;
+    color: rgb(8, 0, 0);
+  }
+
+  section.serv .container div p {
+    font-size: 30px;
+    color: #777;
+  }
+  .mycard{
+     padding: 2rem;
+   /* width: 400px;*/
+    margin-right : 15px;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+      0 5px 15px 0 rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    
+    border-left: 0 solid #00a2ff;
+    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+  }
+  .mycard:hover{
+     padding-left: 0.5rem;
+    border-left: 0.5rem solid #00a2ff;
+  }
+  
+  section.serv .containerbutton {
+    padding-top: 30px;
+    display: grid;
+    position: center ;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 60px;
+  }
+
+  .button1 {
+    align-items: center;
+    background-image: linear-gradient(144deg,#FFFFFF, #FFFFFF 50%,#FFFFFF);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: rgb(6, 70, 135);
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    width: calc(100% - 20px);
+    min-width: 140px;
+    padding: 19px 24px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .button1:active,
+  .button1:hover {
+    background-image: linear-gradient(144deg,#064687, #064687 50%,#064687);
+    color: #FFFFFF;
+
+    outline: 0;
+  }
+
+
+
+  .button2 {
+    align-items: center;
+    background-image: linear-gradient(144deg,#FFFFFF, #FFFFFF 50%,#FFFFFF);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: rgb(6, 70, 135);
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    width: calc(100% - 20px);
+    min-width: 140px;
+    padding: 19px 24px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .button2:active,
+  .button2:hover {
+    background-image: linear-gradient(144deg,#07b463, #07b463 50%,#07b463);
+    color: #FFFFFF;
+
+    outline: 0;
+  }
+
+
+  .buttonsave  {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .buttonsave:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  .buttonsave:active {
+    transform: translateY(-1px);
+  }
+  
+
+
+
+  .buttonclose  {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .buttonclose:hover {
+    background-color: #d00303;
+    box-shadow: 0px 15px 20px rgba(230, 38, 38, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  .buttonclose:active {
+    transform: translateY(-1px);
+  }
+  

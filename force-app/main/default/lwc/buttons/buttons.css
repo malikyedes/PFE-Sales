@@ -1,9 +1,12 @@
 
     
     .container {
+     
+      display: inline-block;
+
         position: center ;
         padding: 10px;
-        max-width: 500px;
+        max-width: auto;
         margin-left: auto;
         margin-right: auto;
         margin-top : 50px ; 
@@ -11,6 +14,9 @@
 
 button {
     align-items: center;
+    margin-left: 100px;
+    margin-top: 25px;
+    margin-right:100px;
     background-image: linear-gradient(144deg,#FFFFFF, #FFFFFF 50%,#FFFFFF);
     border: 0;
     border-radius: 8px;
@@ -22,7 +28,7 @@ button {
     font-size: 20px;
     justify-content: center;
     line-height: 1em;
-    width: calc(100% - 20px);
+    width: 100%; 
     min-width: 140px;
     padding: 19px 24px;
     text-decoration: none;
@@ -32,6 +38,7 @@ button {
     white-space: nowrap;
     cursor: pointer;
     margin-bottom: 10px;
+
   }
   
   button:active,

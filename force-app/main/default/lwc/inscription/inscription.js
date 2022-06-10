@@ -60,26 +60,6 @@ export default class inscription extends LightningElement {
 
     goToStepTwo() {
 
-        const emailRegex=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        let email=this.template.querySelector('[name="email"]');
-        let emailVal=email.value;
-        if (emailVal.match(emailRegex)){
-             
-            this.currentStep = '2';
-            this.template.querySelector('div.stepOne').classList.add('slds-hide');
-             this.template
-            .querySelector('div.stepTwo')
-            .classList.remove('slds-hide');            
-         }
-         else {
-            const toastEvent = new ShowToastEvent({
-                title: '',
-                message: 'Veuillez entrer mail valide',
-                variant: 'error' 
-            });
-            this.dispatchEvent( toastEvent );
-
-         }
         
         if(!this.template.querySelector('[name="first_name"]').value||!this.template.querySelector('[name="last_name"]').value
         ||!this.template.querySelector('[name="00N8d000006itT0"]').value||!this.template.querySelector('[name="00N8d00000AnA2K"]').value
@@ -96,12 +76,31 @@ export default class inscription extends LightningElement {
                 variant: 'error' 
             });
             this.dispatchEvent( toastEvent );        }
-        else{
+            
+        else {
+
+            const emailRegex=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let email=this.template.querySelector('[name="email"]');
+        let emailVal=email.value;
+        if (emailVal.match(emailRegex) ){
+             
             this.currentStep = '2';
             this.template.querySelector('div.stepOne').classList.add('slds-hide');
              this.template
             .querySelector('div.stepTwo')
-            .classList.remove('slds-hide');
+            .classList.remove('slds-hide');            
+         }
+
+         else {
+            const toastEvent = new ShowToastEvent({
+                title: '',
+                message: 'Veuillez entrer une addresse E-Mail valide',
+                variant: 'error' 
+            });
+            this.dispatchEvent( toastEvent );
+
+         }
+        
         }
 
         

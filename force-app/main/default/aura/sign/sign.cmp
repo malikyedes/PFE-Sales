@@ -1,0 +1,25 @@
+<aura:component controller="SignatureHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    <center><span style="font-weight:bold;font-size:20px;margin-top:10px;">Signature Pad</span></center>
+    <div id="signature-pad">    
+        <canvas style="border:1px solid black;width:100%;height:100%;margin-top:10px;" id="divsign"></canvas>                               
+        
+        <div style="float:right;margin-right:16px;"><a href="#" style="text-decoration:none;" id="btnClear">Clear Signature</a></div>
+    </div>
+    <ltng:require scripts="/resource/SignaturePad,/resource/SignApp" /> 
+    <br/>
+    <center>
+    <lightning:button variant="brand" label="Save" title="Save" onclick="{!c.SaveSignature}"/>                
+    </center>
+    <aura:if isTrue="{!v.Spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+ </aura:component>

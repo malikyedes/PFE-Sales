@@ -1,0 +1,42 @@
+div.TS_steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 50px;
+    padding-bottom: 20px;
+}
+
+.yelloan-three-step .TS_steps .TS_step {
+    margin-right: 20px;
+    width: 100%;
+    max-width: 310px;
+}
+div.TS_step_title {
+    font-size: 28px;
+    line-height: 35px;
+    padding: 14px 0 6px;
+    font-weight: 600;
+}
+div.TS_step_subtitle {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.TS_title {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 41px;
+    font-size: 4.5vw;
+    line-height: 63px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+.main-section {
+    background-color: #fff;
+    border-radius: 8px;
+    /* width: 90%;
+    max-width: 1025px;
+    margin: auto; */
+    position: relative;
+    box-shadow: 0 -4px 14px 0 rgb(0 0 0 / 15%);
+}

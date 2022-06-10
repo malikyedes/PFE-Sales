@@ -1,0 +1,77 @@
+<template>
+    <div style="font-size:50px;padding-top: 20px;padding-bottom: 40px;">Bienvenue <strong>{salutation} {Contactname}</strong> &ensp; votre demande de credit est dans l'état : </div>
+    <lightning-progress-indicator current-step={stagename} type="path" variant="base">
+        <lightning-progress-step label="Qualification" value="Qualification"></lightning-progress-step>
+        <lightning-progress-step label="Analyse Documents" value="Analyse Documents"></lightning-progress-step>
+        <lightning-progress-step label="Proposition" value="Proposition"></lightning-progress-step>
+        <lightning-progress-step label="Décision" value="Décision"></lightning-progress-step>
+        <lightning-progress-step label="Négotiation/Review" value="Négotiation/Review"></lightning-progress-step>
+        <lightning-progress-step label="Closed" value="Closed"></lightning-progress-step>
+
+        
+  
+    </lightning-progress-indicator>
+
+<div if:true={qualification}>
+    <div class="slds-path__guidance">
+        <h2 class="slds-path__coach-title">Guide</h2>
+        <div class="slds-text-longform slds-path__guidance-content">
+          <p style="font-family:'Times New Roman', Times, serif;
+          font-size:17px;" >Votre informations on  été collecté avec succés depuis le formulaire </p>
+          <p style="font-family:'Times New Roman', Times, serif;
+          font-size:17px;">Maintenant on vous attend de compléter votre dossier en envoyant les fichiers nécessaires depuis</p><p style="color:blue ;"><a href="https://korba-developer-edition.um8.force.com/Bank/s/uploadfiles">Ici</a></p>
+          
+        </div>
+      </div>
+    </div>
+
+    <div if:true={analyse}>
+        <div class="slds-path__guidance">
+            <h2 class="slds-path__coach-title">Guidance</h2>
+            <div class="slds-text-longform slds-path__guidance-content">
+              <p>Aprés le dépôt de votre dossier et en envoyant vos fichiers d'aprés le site </p>
+              <p>Maintenant nous sommes dans la phase d'analyse des documents on vérifie si vous etes éligible pour prendre le crédit .</p>
+            </div>
+          </div>
+        </div>
+
+        <div if:true={proposition}>
+            <div class="slds-path__guidance">
+                <h2 class="slds-path__coach-title">Guidance</h2>
+                <div class="slds-text-longform slds-path__guidance-content">
+                  <p style="font-family:'Times New Roman', Times, serif;
+                  font-size:17px;" >Aprés vérifier votre dossiers , maintenant nous avons vérifié que vous avez les conditions pour bénificier de ce crédit  </p>
+                  <p style="font-family:'Times New Roman', Times, serif;
+                  font-size:17px;" >On va vous envoyer une proposition pour négocier le taux et le durée <a href="https://korba-developer-edition.um8.force.com/Bank/s/ngociation-">ici</a>.</p>
+                  <p style="font-family:'Times New Roman', Times, serif;
+                  font-size:17px;" > et finalement on va envoyer un devis et table d'amortissement .</p>
+                </div>
+              </div>
+            </div>
+
+            <div if:true={decision}>
+                <div class="slds-path__guidance">
+                    <h2 class="slds-path__coach-title">Guidance </h2>
+                    <div class="slds-text-longform slds-path__guidance-content">
+                      <p>Maintenant on attends les décisions des directeurs pour votre crédit</p>
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div if:true={nego}>
+                    <div class="slds-path__guidance">
+                        <h2 class="slds-path__coach-title">Guidance</h2>
+                        <div class="slds-text-longform slds-path__guidance-content">
+                          <p>La derniére étape consiste à la proposition de contrat et la signature entre les deux parties </p>
+                        </div>
+                      </div>
+                    </div>
+    
+            
+    
+        
+
+
+
+</template>

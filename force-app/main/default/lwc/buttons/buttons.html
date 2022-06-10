@@ -1,8 +1,14 @@
 <template>
     <div class="container">
+        <div if:true={Buttontrue}>
     <button onclick={navigateupload} > Compléter la demande de crédit </button>
+</div>
+<div if:true={button1}>
+    <button onclick={navigateupload} > Suivie crédit </button>
+</div>
+
     <button onclick={navigatetransaction} > Transaction </button>
-    <button onclick={navigatefile} > Postuler </button>
+    <button onclick={navigatesuivi} > Test</button>
 
 </div>
 

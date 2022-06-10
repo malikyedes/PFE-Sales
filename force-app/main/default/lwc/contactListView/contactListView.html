@@ -1,0 +1,106 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="slds-card">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon-standard-contact">
+                                 <lightning-icon icon-name="standard:contact"></lightning-icon>
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span>Contacts List View</span>
+                                        <span class="slds-page-header__title slds-truncate" title="Recently Viewed">Contacts</span><br>
+                                        <span>Selected Contacts: {selectedContactsLen}</span>
+                                    </h1>
+                                </div>     
+                            </div>
+                        </div>
+                        <div class="slds-no-flex">
+                            <lightning-button-icon onclick={refresh}  icon-name="utility:refresh"  alternative-text="Refresh" title="Refresh"></lightning-button-icon>
+                            <lightning-button style="margin:5px;" label="Create new account" title="Open Modal" onclick={customShowModalPopup} class="slds-m-left_x-small"></lightning-button>
+                            <lightning-button    label="Delete Selected Contacts" onclick={deleteSelectedContacts}></lightning-button>
+                            <lightning-input class=" slds-size_small " type="search" onchange={handleSearch} style="margin-left: 125px" placeholder="Search by contact name"></lightning-input>
+                            
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+                
+             
+        </div>
+        
+    </div>
+    
+        
+        <div class="slds-card__body_inner">
+            
+            
+            
+            <lightning-datatable
+            key-field="id"
+            data={contacts}
+            columns={cols}
+            onrowselection={handleRowSelection}
+            onrowaction={handleRowAction}> 
+            <lightning-button   label="Delete Selected Contacts" ></lightning-button>
+            </lightning-datatable>
+        </div>
+
+    <template if:true={customFormModal}>
+ 
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={customHideModalPopup}>
+                    <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 class="slds-text-heading_medium slds-hyphenate">New Contact</h2>
+            </header>
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium">
+         
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom_medium">
+                    <lightning-input label="First Name" value={firstname} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+                </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom_medium">
+            <lightning-input label="Last Name" value={lastname} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input> 
+                </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom_medium">
+            <lightning-input label="Phone" value={phone} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input>
+                </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom_medium">
+            <lightning-input label="Email" value={email} onchange={contactHandleChange} class="slds-m-bottom_x-small slds-p-horizontal_small slds-form-element"></lightning-input> 
+                </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom_medium">
+            <c-lwc-account-custom-lookup  onselected={myLookupHandle}></c-lwc-account-custom-lookup><br/>
+                
+                </div>
+        </div>
+        <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button--destructive" onclick={customHideModalPopup}>Cancel</button>
+                <button   class="slds-button slds-button_brand" onclick={createLookupContactAction} >Save</button>                     
+                
+            </footer>
+        </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open">
+        </div>
+        </template>
+
+        
+</template>

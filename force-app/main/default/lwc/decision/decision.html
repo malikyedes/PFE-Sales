@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Decision des Credits" icon-name="standard:approval">
+        <template if:true={Opportunity.data}>
+            <div class="slds-m-around_medium">
+                <p style="font-size: 50px;">{name}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

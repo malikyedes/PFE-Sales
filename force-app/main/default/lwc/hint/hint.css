@@ -1,0 +1,40 @@
+.simulator-page .notice--nooverlap {
+    margin-top: 80px;
+}
+
+.simulator-page .notice {
+    margin-top: -182px;
+}
+
+.notice {
+    padding: 72px 64px 64px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.notice {
+    margin-left: auto;
+    margin-right: auto;
+}
+.notice {
+    box-shadow: 0 10px 60px 10px rgb(0 39 103 / 7%);
+    max-width: 956px;
+    background-color: #fff;
+    position: relative;
+}
+.notice__icon {
+    position: absolute;
+    top: 0;
+    transform: translate(-4px,-50%);
+}
+.notice__title {
+    font-family: OpenSans Bold,Helvetica Neue,Helvetica,sans-serif;
+    color: #454545;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 24px;
+}
+.notice__text {
+    font-size: 14px;
+    line-height: 22px;
+}

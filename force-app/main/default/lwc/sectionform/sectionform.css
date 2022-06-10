@@ -1,22 +1,37 @@
 section.serv {
 
   margin-top: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   padding:20px ;
     
   }
   section.serv .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 60px;
   }
   section.serv .container div {
     text-align: center;
   }
   section.serv .container div img {
-    width: 80px;
+    width: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
     margin-bottom: 20px;
   }
+
+  section.serv .container div h4 {
+    color: #777;
+
+  font-size: 20px;
+  font-weight: 50;
+  font-family: sans-serif;
+
+}
   section.serv .container div p {
     color: #777;
-  }
+    font-family: sans-serif;
+  font-size: large;
+  font-weight: 100;
+
+}
