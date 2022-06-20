@@ -8,30 +8,39 @@
          <h4>
 
             Vous avez fait  {rpb.Tentative__c} Propositions 
-         </h4>       
+
+
+         </h4>    
+         <div if:true={text}>
+              <p style="font-family:'Times New Roman', Times, serif;
+              font-size:30px;color:green"> Vous avez Déja accepté notre proposition </p> 
+         </div>   
       </div>
        </div>
 
        
           <div class="container">
           <div class="mycard">
-            <h4>Durée proposé</h4>
+            <h4>Durée proposé (Mois) </h4>
             <p>
                 {rpb.Dur_e__c}
             </p>
           </div>
           <div class="mycard">
-            <h4>Taux </h4>
+            <h4>Taux (TMM + Taux banque)</h4>
             <p>
                 {rpb.Taux_propos__c} %
-
+            
             </p>
+            
           </div>
           </div>
 
           <div class="containerbutton">
+            <div if:true={Buttonaccept}>
+               
             <button class="button2" onclick={modalaccept}> Accepter </button>
-
+            </div>
             <div if:true={Buttontrue}>
             <button class="button1" onclick={handlemodal} > Négocier  </button>
          </div>

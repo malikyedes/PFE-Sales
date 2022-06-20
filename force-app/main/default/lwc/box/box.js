@@ -9,8 +9,7 @@ export default class Box extends NavigationMixin(LightningElement) {
     voiture = img +'/creditimg/creditvoiture.jpg' ;
     immob = img +'/creditimg/creditimmobilier.jpg' ;
     
-    navigatevoit(event) {
-        alert(event.target.label) ; 
+    navigatevoit() {
         this[NavigationMixin.Navigate]({
             type: 'standard__namedPage',
             attributes: {
@@ -18,8 +17,7 @@ export default class Box extends NavigationMixin(LightningElement) {
             }
         });
     }
-    navigateconso(event) {
-        alert(event.target.label) ; 
+    navigateconso() {
         this[NavigationMixin.Navigate]({
             type: 'standard__namedPage',
             attributes: {
@@ -28,12 +26,11 @@ export default class Box extends NavigationMixin(LightningElement) {
         });
     }
 
-    navigateimmob(event) {
-        alert(event.target.label) ; 
+    navigateimmob() {
         this[NavigationMixin.Navigate]({
             type: 'standard__namedPage',
             attributes: {
-                pageName:"créditimmob",
+                pageName:"crditimmob",
             }
         });
     }

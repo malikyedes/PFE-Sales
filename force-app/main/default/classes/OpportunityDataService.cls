@@ -26,4 +26,47 @@ public with sharing class OpportunityDataService {
 
         return opportunityStatusMap;
     }
+
+
+
+    @AuraEnabled
+    public static Opportunity  changestage( string recordid){
+  
+
+
+        List<Opp_stage__mdt> oppstage = [SELECT id, stage_n__c, Stage_n_1__c FROM Opp_stage__mdt] ;
+
+        Opportunity opp1 ;
+   
+   for (Opp_stage__mdt oppa: oppstage ) {
+   
+   for(Opportunity opp : [Select id , StageName from opportunity where id=:recordid])
+   
+   {
+   
+       
+   
+       if (oppa.stage_n__c  == opp.StageName) {
+           
+           System.Debug(oppa.Stage_n_1__c) ;
+           opp.StageName = oppa.Stage_n_1__c ; 
+            System.Debug(opp.StageName) ;
+          opp1 = opp ; 
+               }
+       
+           
+   }
+   }
+   
+   update opp1 ;
+   return opp1 ;
+
+
+    }
+
+
+
+
+
+
 }

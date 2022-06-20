@@ -19,8 +19,10 @@ export default class Negociation extends LightningElement {
 @track error;
 @track modal=false ; 
 @track Buttontrue=true;
+@track Buttonaccept=true;
+@track text= false;
 tentative=0 ; 
-
+@track negociation ;
 @api NewNego ={};
 @api nego ={};
 @api departmentRecoredId ;
@@ -57,11 +59,18 @@ tentative=0 ;
 @wire(getnegoetails, {ContactId : '$ContactId'} )
 Allnego; 
 
-renderedCallback() {
-    this.tentative= this.Allnego.data[0].Tentative__c ;
-    if (this.tentative > 3 ) 
-    {
+connectedCallback() {
     
+    this.tentative= this.Allnego.data[0].Tentative__c ;
+    if (this.Allnego.data[0].Proposition_accept__c== true ) 
+    {
+       this.text=true;
+    
+    }
+
+    if (this.tentative > 3 || this.Allnego.data[0].Proposition_accept__c== true ) 
+    {
+       this.Buttonaccept=false;
         this.Buttontrue=false;
     
     }

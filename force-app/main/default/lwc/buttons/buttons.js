@@ -106,7 +106,7 @@ export default class Buttons extends NavigationMixin (LightningElement) {
 
     }
 
-    /*navigatefile() {
+    navigatefile() {
         this[NavigationMixin.Navigate]({
             type: 'standard__objectPage',
             attributes: {
@@ -117,14 +117,14 @@ export default class Buttons extends NavigationMixin (LightningElement) {
 
 
     }
-    */
+    
 
 
     navigatesuivi() {
         this[NavigationMixin.Navigate]({
             type: 'standard__namedPage',
             attributes: {
-                pageName:"suiviecrédit",
+                pageName:"suivie-crdit",
             }
         });
 
