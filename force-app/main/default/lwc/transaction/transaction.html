@@ -9,10 +9,10 @@
 
     <lightning-card title="Historique Transaction">
         <lightning-layout-item class="slds-var-p-left_small">
-            <lightning-button label="previous month" variant="brand" onclick={getTransactionprevmonth}></lightning-button>
+            <button class="button1" onclick={getTransactionprevmonth}>Mois dernier</button>
         </lightning-layout-item>
         <lightning-layout-item class="slds-var-p-left_small">
-            <lightning-button label="this month" variant="brand" onclick={getTransactionthismonth}></lightning-button>
+            <button class="button1"  onclick={getTransactionthismonth}>Ce mois </button>
         </lightning-layout-item>
 
         <div class="slds-size_2-of-2">
@@ -23,7 +23,7 @@
                 <lightning-input type="search" value={datefin} onchange={updatedatefin} label="Saisir Date fin (AAAA-MM-JJ)"></lightning-input>
                 </lightning-layout-item>
                 <lightning-layout-item class="slds-var-p-left_small">
-                    <lightning-button label="Search" variant="brand" onclick={getTransaction}></lightning-button>
+                    <button class="button1" onclick={getTransaction}>Recherche</button>
                 </lightning-layout-item>
 
             </lightning-layout>
@@ -44,7 +44,7 @@
                         <thead>
                             <tr>
                                 <th class="" scope="col">
-                                    <div class="slds-truncate" title="Monant">Monant</div>
+                                    <div class="slds-truncate" title="Monant">Montant</div>
                                   </th>
                                   <th class="" scope="col">
                                     <div class="slds-truncate" title="RIB">RIB Destination</div>

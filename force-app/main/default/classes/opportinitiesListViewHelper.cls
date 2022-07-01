@@ -1,7 +1,7 @@
 public class opportinitiesListViewHelper {
 	@AuraEnabled(cacheable=True)
     public static List<Opportunity> getOpportunities(){
-        return [SELECT Id, Name, accountId ,contact__c,contact__r.name,Type_cr_dit__c,
+        return [SELECT Id, Name, accountId ,Type_cr_dit__c,
                 account.name, Montant_totale__c , Montant_Cr_dit__c ,CloseDate,StageName
                 FROM Opportunity  WHERE CreatedDate > 2022-03-01T00:00:00Z 
                 LIMIT 1000];

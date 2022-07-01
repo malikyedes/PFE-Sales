@@ -36,10 +36,10 @@
                 tile += '<div class="slds-tile slds-tile--board">';
                 tile += '<p class="slds-tile__title slds-truncate"><a href="#">Mois - '+ i +' </a></p>';
                 tile += '<div class="slds-tile__detail">';
-                tile += '<p class="slds-text-heading--medium">Versement - '+ Math.round(emi) +'</p>';
-                tile += '<p class="slds-truncate"><a href="#">Interet - '+ Math.round(interest) +'</a></p>';
-                tile += '<p class="slds-truncate">Principale - '+ Math.round(Principal) +'</p>';
-                tile += '<p class="slds-truncate">Balance - '+ Math.round(balance) +'</p>';
+                tile += '<p class="slds-text-heading--medium">Versement - '+ Math.round(emi) +'TND'+'</p>';
+                tile += '<p class="slds-truncate"><a href="#">Interet - '+ Math.round(interest) +'TND'+'</a></p>';
+                tile += '<p class="slds-truncate">Principale - '+ Math.round(Principal) +'TND'+'</p>';
+                tile += '<p class="slds-truncate">Balance - '+ Math.round(balance) +'TND'+'</p>';
                 tile += '</div>';
                 tile += '</div>';
                 tile += '</li>';

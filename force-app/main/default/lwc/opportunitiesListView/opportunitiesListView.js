@@ -19,7 +19,6 @@ const COLS = [{label: 'Name', fieldName: 'link', type: 'url', typeAttributes: {l
             {label: "Montant totale	", fieldName: 'Montant_totale__c'},
             {label: "Type crédit	", fieldName: 'Type_cr_dit__c'},
             {label: 'Account', fieldName: "accountLink", type: 'url', typeAttributes: {label: {fieldName: 'AccountName'}}},
-            {label: 'Contact', fieldName: "contactLink", type: 'url', typeAttributes: {label: {fieldName: 'Contact__c'}}},
             {label: "Close Date", fieldName: 'CloseDate'},
             {label: "Stage Name", fieldName: 'StageName'},
             { fieldName: "actions", type: 'action', typeAttributes: {rowActions: ACTIONS}}
@@ -37,7 +36,7 @@ export default class OpportunitiesListView extends NavigationMixin(LightningElem
         this[NavigationMixin.Navigate]({
             type: "standard__webPage",
             attributes: {
-                url: ""
+                url: "https://playful-otter-kjf4dm-dev-ed.lightning.force.com/one/one.app#eyJjb21wb25lbnREZWYiOiJvbmU6YWxvaGFQYWdlIiwiYXR0cmlidXRlcyI6eyJhZGRyZXNzIjoiaHR0cHM6Ly9wbGF5ZnVsLW90dGVyLWtqZjRkbS1kZXYtZWQtLWMudmlzdWFsZm9yY2UuY29tL2FwZXgvcGRmb3BwP2lkPTAwNjhkMDAwMDA0T1oxVEFBVyJ9LCJzdGF0ZSI6e319"
             }
         });
     }
@@ -69,8 +68,6 @@ export default class OpportunitiesListView extends NavigationMixin(LightningElem
     mapOpportunities(row){
         var accountName = '';
         var accountLink = '';
-        var contactName = '';
-        var contactLink = '';
 
 
         if(row.AccountId != undefined){
@@ -78,9 +75,6 @@ export default class OpportunitiesListView extends NavigationMixin(LightningElem
             accountName = row.Account['Name'];
         }
 
-        if(row.Contact__c != undefined){
-            contactLink = `/${row.contact__c}`;
-        }
 
         var montant = row.Montant_Cr_dit__c
         if(row.Montant_Cr_dit__c == undefined){
@@ -95,11 +89,9 @@ export default class OpportunitiesListView extends NavigationMixin(LightningElem
             link: `/${row.Id}`,
             accountLink: accountLink,
             AccountName: accountName,
-            contactLink:contactLink,
             Type_cr_dit__c: `${row.Type_cr_dit__c}`,
             Montant_Cr_dit__c: `${row.Montant_Cr_dit__c}`,
             Montant_totale__c: `${row.Montant_totale__c}`,
-            Contact__c: `${row.Contact__c}`,
             CloseDate: `${row.CloseDate}`,
             StageName: `${row.StageName}`,
             
@@ -136,7 +128,7 @@ export default class OpportunitiesListView extends NavigationMixin(LightningElem
         this[NavigationMixin.Navigate]({
             type: 'standard__navItemPage',
             attributes: {
-                apiName: 'Opportunities_Dashboard1'
+                apiName: 'Dashboard_Opportunities'
          },
      });
     }

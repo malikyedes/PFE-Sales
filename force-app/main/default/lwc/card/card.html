@@ -1,0 +1,33 @@
+<template>
+    <div class="card-wrap" for:each={Con.data} for:item="rpb" key={rpb.Id}>
+        <div class="card card-front animate">
+          <div class="number">
+            <div class="label">Numéro</div>
+            <span>5550</span>
+            <span>6143</span>
+            <span>3017</span>
+            <span>7628</span>
+          </div>
+          <div class="owner-data">
+            <div class="name">
+              <div class="label">Nom</div>
+              <div class="value">{rpb.FirstName} &nbsp; {rpb.LastName}</div>
+            </div>
+            <div class="validate">
+              <div class="label">Validité THU</div>
+              <div class="value">01/27</div>
+            </div>
+          </div>
+          <div class="flag">
+            <img src={imageslogan} alt="mastercard">
+          </div>
+        </div>
+        <div class="card card-back animate">
+          <div class="bar"></div>
+          <div class="secret-code">
+            <div class="label">CVV</div>
+            <div class="value">871</div>
+          </div>
+        </div>
+      </div>
+</template>

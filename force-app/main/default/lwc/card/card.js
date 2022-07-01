@@ -1,12 +1,15 @@
-import { LightningElement, wire, track, api } from 'lwc';
-import getdetails from "@salesforce/apex/FinanceAccountController.getdetails";
-import UsId from '@salesforce/user/Id';
+import { LightningElement,api,track,wire } from 'lwc';
+import img  from '@salesforce/resourceUrl/logopng' ;
+import { NavigationMixin } from 'lightning/navigation';
 import getContactId from "@salesforce/apex/GetcontactId.getContactId";
+import UsId from '@salesforce/user/Id';
+import getContacts from "@salesforce/apex/GetcontactId.getContacts";
 
-export default class Balance extends LightningElement {
+export default class Card extends LightningElement {
+
+    imageslogan = img ;
     @track ContactId="";
     userId = UsId;
-
     @wire(getContactId, {userId : '$userId'})loggedinid({error,data}) {
 
         if (data) {
@@ -15,7 +18,8 @@ export default class Balance extends LightningElement {
             console.log("1");
     
             console.log(data);
-    
+            console.log(this.ContactId);
+
             
         } else if (error) {
     
@@ -26,21 +30,21 @@ export default class Balance extends LightningElement {
             console.log(JSON.stringify(error));
     
         }
+    
+    
+    
     }
 
 
-    @wire(getdetails, {ContactId : '$ContactId'} )
-All; 
+    @wire(getContacts, {ContactId : '$ContactId'} )
+    Con;
 
-renderedCallback() {
-console.log(this.All.data)
-
+        
 
 
-}
-    
-    
-    
+
+
+
 
 
 

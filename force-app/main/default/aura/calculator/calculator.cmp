@@ -30,7 +30,7 @@
                      
                     <div class="slds-form--stacked">
                         <div class="slds-form-element">
-                            <label class="slds-form-element__label" >Montant crédit</label>
+                            <label class="slds-form-element__label" >Montant crédit (TND)</label>
                             <div class="slds-form-element__control">
                                 <input id="loanAmt" class="slds-input" type="text"  required="" />
                             </div>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="slds-form-element">
-                            <label class="slds-form-element__label" >Interet</label>
+                            <label class="slds-form-element__label" >Interet(%)</label>
                             <div class="slds-form-element__control">
                                 <input id="rate" class="slds-input" type="text" required="" />
                             </div>
@@ -58,19 +58,19 @@
                 <div class="slds-col--padded slds-size--1-of-1 " >
                     <div id="emiDiv" style="display:none;">
                         <div class="slds-form-element">
-                            <span class="slds-form-element__label">mensualités</span>
+                            <span class="slds-form-element__label">Mensualités (TND) </span>
                             <div class="slds-form-element__control">
                                 <span class="slds-form-element__static"><div id="EMI"></div></span>
                             </div>
                         </div>
                         <div class="slds-form-element">
-                            <span class="slds-form-element__label">Interet Payable</span>
+                            <span class="slds-form-element__label">Interet Payable (TND)</span>
                             <div class="slds-form-element__control">
                                 <span  class="slds-form-element__static"><div id="interestP"></div></span>
                             </div>
                         </div>
                         <div class="slds-form-element">
-                            <span class="slds-form-element__label">Total Payable</span>
+                            <span class="slds-form-element__label">Total Payable (TND)</span>
                             <div class="slds-form-element__control">
                                 <span  class="slds-form-element__static"><div id="totalP" ></div></span>
                             </div>

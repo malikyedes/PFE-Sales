@@ -53,6 +53,19 @@ export default class PreviewFileThumbnailCard extends LightningElement {
     return "doctype:image";
   }
 
+  previewHandler(event){
+    console.log(event.target.dataset.id)
+    this[NavigationMixin.Navigate]({ 
+        type:'standard__namedPage',
+        attributes:{ 
+            pageName:'filePreview'
+        },
+        state:{ 
+            selectedRecordId: event.target.dataset.id
+        }
+    })
+}
+  
   filePreview() {
     console.log("###Click");
     const showPreview = this.template.querySelector("c-preview-file-modal");
@@ -67,7 +80,8 @@ export default class PreviewFileThumbnailCard extends LightningElement {
     console.log("###handle on select : " + selection);
 
     if (selection === "preview") {
-      this.filePreview();
+      this.previewHandler();
+     // this.filePreview();
     } else if (selection === "delete") {
       //code to delete the file
     } else if (selection === "convert") {

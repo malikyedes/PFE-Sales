@@ -59,7 +59,7 @@ tentative=0 ;
 @wire(getnegoetails, {ContactId : '$ContactId'} )
 Allnego; 
 
-connectedCallback() {
+renderedCallback() {
     
     this.tentative= this.Allnego.data[0].Tentative__c ;
     if (this.Allnego.data[0].Proposition_accept__c== true ) 

@@ -1,5 +1,6 @@
 <template>
     
+    <div for:each={All.data} for:item="rpb" key={rpb.Id}>
 
     <div class="light-back"></div> 
 
@@ -7,14 +8,14 @@
       <div class="section-row">
           <div class="section-col-2">
               <div class="section">
-                  <p class="color-blue">Your current balance</p>
-                  <h3><span class="font-weight-500">DT</span> 4,376.00</h3>
+                  <p class="color-blue">Solde du compte crédit</p>
+                  <h3><span class="font-weight-500">DT</span> {rpb.Balance__c} </h3>
               </div>
           </div>
           <div class="section-col-2">
               <div class="section">
-                  <p class="color-yellow">Your credit limit</p>
-                  <h3><span class="font-weight-500">DT</span> 8,500.00</h3>
+                  <p class="color-yellow">Reste à payer</p>
+                  <h3><span class="font-weight-500">DT</span>{rpb.Reste_payer__c} </h3>
               </div>
           </div>
           <!--
@@ -82,5 +83,6 @@
           </div> -->
       </div>
 
+  </div>
   </div>
 </template>
